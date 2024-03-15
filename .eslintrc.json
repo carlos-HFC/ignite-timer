@@ -1,0 +1,14 @@
+{
+  "extends": "@rocketseat/eslint-config/react",
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleAttributePerLine": true,
+        "semi": false,
+        "endOfLine": "auto",
+        "arrowParens": "avoid"
+      }
+    ]
+  }
+}

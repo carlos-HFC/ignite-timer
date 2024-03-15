@@ -9,6 +9,8 @@
         "endOfLine": "auto",
         "arrowParens": "avoid"
       }
-    ]
+    ],
+    "no-unused-vars": "warn",
+    "@typescript-eslint/no-unused-vars": "warn"
   }
 }

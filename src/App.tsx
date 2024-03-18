@@ -1,3 +1,5 @@
+import { setDefaultOptions } from "date-fns"
+import { ptBR } from "date-fns/locale"
 import { BrowserRouter } from "react-router-dom"
 import { ThemeProvider } from "styled-components"
 
@@ -6,6 +8,10 @@ import { Router } from "./routes"
 
 import { GlobalStyle } from "./styles/global"
 import { defaultTheme } from "./styles/themes/default"
+
+setDefaultOptions({
+  locale: ptBR,
+})
 
 export function App() {
   return (

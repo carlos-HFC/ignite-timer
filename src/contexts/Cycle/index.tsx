@@ -1,3 +1,4 @@
+import { differenceInSeconds } from "date-fns"
 import {
   PropsWithChildren,
   createContext,
@@ -7,7 +8,6 @@ import {
   useState,
 } from "react"
 
-import { differenceInSeconds } from "date-fns"
 import {
   addNewCycleAction,
   interruptCurrentCycleAction,
@@ -49,7 +49,16 @@ export function CyclesProvider({ children }: CyclesProviderProps) {
         "@ignite-timer:cycles-state",
       )
 
-      if (storageStateAsJSON) return JSON.parse(storageStateAsJSON)
+      if (storageStateAsJSON) {
+        const parsedData = JSON.parse(storageStateAsJSON)
+
+        return {
+          ...parsedData,
+          cycles: (parsedData.cycles as Cycle[]).sort((a, b) =>
+            Number(a.id) < Number(b.id) ? 1 : -1,
+          ),
+        }
+      }
 
       return initialState
     },

@@ -9,7 +9,7 @@ interface CycleState {
 
 interface CycleAction {
   type: string
-  payload: any
+  payload?: any
 }
 
 export function cyclesReducer(state: CycleState, action: CycleAction) {

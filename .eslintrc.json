@@ -2,7 +2,7 @@
   "extends": "@rocketseat/eslint-config/react",
   "rules": {
     "prettier/prettier": [
-      "error",
+      "warn",
       {
         "singleAttributePerLine": true,
         "semi": false,
